@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-bottom: 5rem;
+}
+
+.board-game {
+  width: 400px;
+  height: 400px;
+  background: white;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  span {
+    width: 33.33333%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 30px;
+    position: relative;
+    outline: 1px solid #ccc;
+
+    &:hover {
+      background: #f6f6f6;
+      cursor: pointer;
+    }
+
+    &::after {
+      content: "";
+      display: none;
+      width: 180%;
+      height: 10px;
+      background: black;
+      position: absolute;
+      z-index: 100;
+    }
+
+    &.horizontal {
+      &::after {
+        display: block;
+      }
+    }
+    &.vertical {
+      &::after {
+        display: block;
+        rotate: 90deg;
+      }
+    }
+    &.diagonal-1 {
+      &::after {
+        display: block;
+        rotate: 45deg;
+      }
+    }
+    &.diagonal-2 {
+      &::after {
+        display: block;
+        rotate: 135deg;
+      }
+    }
+
+    abbr {
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  }
+}
