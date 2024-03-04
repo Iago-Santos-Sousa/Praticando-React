@@ -1,0 +1,12 @@
+.dropdown-content a:hover {
+  background-color: #f1f1f1 !important;
+  cursor: pointer;
+}
+
+/* .dropdown:hover .dropdown-content {
+  display: block !important;
+} */
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41 !important;
+}

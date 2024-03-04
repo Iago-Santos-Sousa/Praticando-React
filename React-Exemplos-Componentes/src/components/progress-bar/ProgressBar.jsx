@@ -1,8 +1,16 @@
 import "./ProgressBar.css";
+import { useState, useEffect } from "react";
 
-const ProgressBar = ({ bgcolor, progress, height }) => {
+const ProgressBar = () => {
+  const [progress, setProgress] = useState(0); // ProgressBar
+
+  useEffect(() => {
+    // ProgressBar
+    setInterval(() => setProgress(Math.floor(Math.random() * 100) + 1), 2000);
+  }, []);
+
   const Parentdiv = {
-    height: height,
+    height: 30,
     width: "100%",
     backgroundColor: "whitesmoke",
     borderRadius: 40,
@@ -12,7 +20,7 @@ const ProgressBar = ({ bgcolor, progress, height }) => {
   const Childdiv = {
     height: "100%",
     width: `${progress}%`,
-    backgroundColor: bgcolor,
+    backgroundColor: "#99ccff",
     borderRadius: 40,
     textAlign: "right",
     transition: "width 1s ease-in-out",
