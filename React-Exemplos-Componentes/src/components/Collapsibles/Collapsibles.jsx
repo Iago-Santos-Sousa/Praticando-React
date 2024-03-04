@@ -46,7 +46,7 @@ const Collapsibles = () => {
     padding: "0 18px",
     width: "100%",
     maxHeight: 0,
-    overflow: "auto",
+
     transition: "max-height 0.2s ease-out",
     backgroundColor: "#f1f1f1",
   };
@@ -72,7 +72,7 @@ const Collapsibles = () => {
       {contents.map((ele, index, arr) => (
         <div key={index} style={{ width: "500px" }}>
           <button
-            className="collapsible"
+            className={`collapsible ${activeContents[index] ? "active" : ""}`}
             style={collapsibleStyle}
             onClick={() => handleClick(index)}
           >
@@ -82,7 +82,8 @@ const Collapsibles = () => {
             className="content"
             style={{
               ...contentStyle,
-              maxHeight: activeContents[index] ? "80px" : "0",
+              maxHeight: activeContents[index] ? "100px" : "0",
+              overflow: activeContents[index] ? "auto" : "hidden",
             }}
           >
             <p>{ele.paragraph}</p>
