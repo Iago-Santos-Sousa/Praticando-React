@@ -1,0 +1,14 @@
+.c-loader-um {
+  animation: is-rotating 1s infinite;
+  border: 6px solid #e5e5e5;
+  border-top-color: #0b77d8;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}

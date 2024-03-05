@@ -26,6 +26,8 @@ const Collapsibles = () => {
     contents.map(() => false),
   );
 
+  const [styleOverflow, SetStyleOverflow] = useState("");
+
   const collapsibleStyle = {
     backgroundColor: "#777",
     color: "white",
@@ -46,8 +48,7 @@ const Collapsibles = () => {
     padding: "0 18px",
     width: "100%",
     maxHeight: 0,
-
-    transition: "max-height 0.2s ease-out",
+    transition: "all 0.2s ease-out",
     backgroundColor: "#f1f1f1",
   };
 
@@ -84,6 +85,7 @@ const Collapsibles = () => {
               ...contentStyle,
               maxHeight: activeContents[index] ? "100px" : "0",
               overflow: activeContents[index] ? "auto" : "hidden",
+              padding: activeContents[index] ? "10px 18px" : "0 18px",
             }}
           >
             <p>{ele.paragraph}</p>

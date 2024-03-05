@@ -3,6 +3,10 @@ import "./App.css";
 import ProgressBar from "./components/progress-bar/ProgressBar";
 import Dropdown from "./components/Dropdown/Dropdown";
 import Collapsibles from "./components/Collapsibles/Collapsibles";
+import DotsLoading from "./components/DotsLoading/DotsLoading";
+import MenuBurguer from "./components/MenuBurguer/MenuBurguer";
+import LoaderUm from "./components/LoaderUm/LoaderUm";
+import ToolTip from "./components/ToolTip/ToolTip";
 
 function App() {
   return (
@@ -13,6 +17,15 @@ function App() {
       <br />
       <br />
       <Collapsibles />
+      <br />
+      <br />
+      <DotsLoading />
+      <br />
+      <MenuBurguer />
+      <br />
+      <LoaderUm />
+      <br />
+      <ToolTip />
     </>
   );
 }
