@@ -56,7 +56,7 @@ const ToolTip = () => {
       onMouseOut={(e) => handleMouseOut(e)}
       style={tooltipStyle}
     >
-      Hover over me
+      Hover over me ToolTip
       <span className="tooltiptext" style={tooltiptextStyle}>
         ToolTip text
       </span>

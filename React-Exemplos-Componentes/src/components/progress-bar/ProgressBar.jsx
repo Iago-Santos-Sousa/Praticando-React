@@ -11,10 +11,10 @@ const ProgressBar = () => {
 
   const Parentdiv = {
     height: 30,
-    width: "100%",
+    width: "60%",
     backgroundColor: "whitesmoke",
     borderRadius: 40,
-    margin: 50,
+    margin: "50px auto",
   };
 
   const Childdiv = {
