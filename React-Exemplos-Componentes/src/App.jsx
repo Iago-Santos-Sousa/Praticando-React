@@ -7,6 +7,7 @@ import DotsLoading from "./components/DotsLoading/DotsLoading";
 import MenuBurguer from "./components/MenuBurguer/MenuBurguer";
 import LoaderUm from "./components/LoaderUm/LoaderUm";
 import ToolTip from "./components/ToolTip/ToolTip";
+import CountDownBar from "./components/CountDownBar/CountDownBar";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
       <LoaderUm />
       <br />
       <ToolTip />
+      <br />
+      <br />
+      <CountDownBar />
     </>
   );
 }

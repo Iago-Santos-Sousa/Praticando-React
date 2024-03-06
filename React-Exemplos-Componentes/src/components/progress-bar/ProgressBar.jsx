@@ -6,15 +6,22 @@ const ProgressBar = () => {
 
   useEffect(() => {
     // ProgressBar
-    setInterval(() => setProgress(Math.floor(Math.random() * 100) + 1), 2000);
+    // setInterval(() => setProgress(Math.floor(Math.random() * 100) + 1), 2000);
   }, []);
+
+  const containerStyle = {
+    width: "100%",
+    display: "flex",
+    gap: "1rem",
+    flexDirection: "column",
+  };
 
   const Parentdiv = {
     height: 30,
     width: "60%",
     backgroundColor: "whitesmoke",
     borderRadius: 40,
-    margin: "50px auto",
+    margin: "20px auto",
   };
 
   const Childdiv = {
@@ -33,10 +40,15 @@ const ProgressBar = () => {
   };
 
   return (
-    <div style={Parentdiv}>
-      <div style={Childdiv}>
-        <span style={progresstext}>{`${progress}%`}</span>
+    <div className="container" style={containerStyle}>
+      <div style={Parentdiv}>
+        <div style={Childdiv}>
+          <span style={progresstext}>{`${progress}%`}</span>
+        </div>
       </div>
+      <button onClick={() => setProgress(40)} style={{ margin: "0 auto" }}>
+        Incrementa a barra.
+      </button>
     </div>
   );
 };
