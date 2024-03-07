@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./Collapsibles.css";
+import "./Accordion.css";
 
 const contents = [
   {
@@ -20,7 +20,7 @@ const contents = [
   },
 ];
 
-const Collapsibles = () => {
+const Accordion = () => {
   /* criar um estado separado para cada item no array contents para controlar se a div correspondente está aberta ou fechada. Além disso, ajuste a lógica no evento de clique para lidar com o estado de cada item individualmente */
   const [activeContents, setActiveContents] = useState(
     contents.map(() => false),
@@ -62,14 +62,18 @@ const Collapsibles = () => {
 
   const handleClick = (index) => {
     setActiveContents((prev) => {
-      const newActiveContents = [...prev];
-      newActiveContents[index] = !newActiveContents[index];
+      // Modo accordion
+      if (prev[index] === true) {
+        // Permite fechar o item que já foi clicado
+        prev[index] = false;
+        return prev;
+      }
+
+      const newActiveContents = prev.map(() => false); // Define todos os valores como false
+
+      newActiveContents[index] = true; // Define o valor correspondente ao índice como true
 
       return newActiveContents;
-      /* Essa refatoração utiliza o método map para criar um novo array, onde o valor correspondente ao índice clicado é negado, mantendo os outros valores inalterados (collapseble). Isso simplifica a lógica da função handleClick. 
-      const test = prev.map((value, i) => (i === index ? !value : value));
-      console.log(test);
-      */
     });
   };
 
@@ -81,7 +85,9 @@ const Collapsibles = () => {
       {contents.map((ele, index, arr) => (
         <div key={index} style={{ width: "500px" }}>
           <button
-            className={`collapsible ${activeContents[index] ? "active" : ""}`}
+            className={`accordion ${
+              activeContents[index] ? "active-accordion" : ""
+            }`}
             style={collapsibleStyle}
             onClick={() => {
               handleClick(index);
@@ -108,4 +114,4 @@ const Collapsibles = () => {
   );
 };
 
-export default Collapsibles;
+export default Accordion;

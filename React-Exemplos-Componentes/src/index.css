@@ -7,3 +7,11 @@
 body {
   padding-bottom: 50rem;
 }
+
+:root {
+  --gray-900: #121214;
+  --gray-300: #444448;
+
+  --primary-200: #fcd085;
+  --primary-400: #ffbc48;
+}

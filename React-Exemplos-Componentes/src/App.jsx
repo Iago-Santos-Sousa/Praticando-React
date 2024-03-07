@@ -8,6 +8,8 @@ import MenuBurguer from "./components/MenuBurguer/MenuBurguer";
 import LoaderUm from "./components/LoaderUm/LoaderUm";
 import ToolTip from "./components/ToolTip/ToolTip";
 import CountDownBar from "./components/CountDownBar/CountDownBar";
+import Accordion from "./components/Accordion/Accordion";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
   return (
@@ -30,6 +32,11 @@ function App() {
       <br />
       <br />
       <CountDownBar />
+
+      <br />
+      <Accordion />
+      <br />
+      <SearchBar />
     </>
   );
 }
