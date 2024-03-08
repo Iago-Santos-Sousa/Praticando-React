@@ -10,6 +10,7 @@ import ToolTip from "./components/ToolTip/ToolTip";
 import CountDownBar from "./components/CountDownBar/CountDownBar";
 import Accordion from "./components/Accordion/Accordion";
 import SearchBar from "./components/SearchBar/SearchBar";
+import ImageSlider from "./components/ImageSlider/ImageSlider";
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
       <Accordion />
       <br />
       <SearchBar />
+      <br />
+      <ImageSlider />
     </>
   );
 }
