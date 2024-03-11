@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./SearchBar.css";
 import { pokemonNamesArr } from "./pokemonNamesArr";
 import search from "../../assets/search.svg";
@@ -50,13 +50,16 @@ const searchBoxStyle = {
   overflow: "auto",
   color: "white",
   fontSize: "1.6rem",
-  position: "relative",
+  position: "absolute",
   textAlign: "left",
+  zIndex: 2,
 };
 
 const SearchBar = () => {
   const [results, setResults] = useState([]);
   const [dataPokemon, setDataPokemon] = useState("");
+  const inputRef = useRef(null);
+  const boxSearchRef = useRef(null);
 
   const handleInput = (e) => {
     const input = e.target.value;
@@ -78,6 +81,24 @@ const SearchBar = () => {
     setResults([]);
   };
 
+  const handleOutsideClick = (e) => {
+    if (inputRef.current && !inputRef.current.contains(e.target)) {
+      boxSearchRef.current.style.display = "none";
+      // console.log("clicou fora do input");
+    } else {
+      boxSearchRef.current.style.display = "block";
+      console.log("clicou dentro do input");
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   // console.log({ pokemonNamesArr });
   // console.log({ dataPokemon });
   // console.log({ results });
@@ -89,6 +110,7 @@ const SearchBar = () => {
           Filter
         </label>
         <input
+          ref={inputRef}
           id="filter"
           type="text"
           placeholder="Pokemons"
@@ -107,15 +129,15 @@ const SearchBar = () => {
         <i className="search-icon">
           <img src={search} alt="" />
         </i>
-      </div>
-      <div className="results-box" style={searchBoxStyle}>
-        <ul>
-          {results.map((result, key) => (
-            <li key={key} onClick={(e) => handleSelectInput(e, result)}>
-              {result}
-            </li>
-          ))}
-        </ul>
+        <div className="results-box" style={searchBoxStyle} ref={boxSearchRef}>
+          <ul>
+            {results.map((result, key) => (
+              <li key={key} onClick={(e) => handleSelectInput(e, result)}>
+                {result}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

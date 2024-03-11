@@ -1,8 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Dropdown.css";
 
 const Dropdown = () => {
   const [activeMenu, setActiveMenu] = useState(false);
+  const dropDownRef = useRef(null);
+
+  const handleOutsideClick = (e) => {
+    if (dropDownRef.current && !dropDownRef.current.contains(e.target)) {
+      setActiveMenu(false);
+      // console.log("clicou fora do input");
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
 
   const dropDown = {
     position: "relative",
@@ -58,6 +74,7 @@ const Dropdown = () => {
       className="dropdown"
       style={dropDown}
       onClick={() => setActiveMenu((prev) => !prev)}
+      ref={dropDownRef}
     >
       <button className="dropdown-btn" style={dropBtn}>
         <span>Dropdown</span>

@@ -50,6 +50,7 @@ const Collapsibles = () => {
     maxHeight: 0,
     transition: "all 0.2s ease-out",
     backgroundColor: "#f1f1f1",
+    overflow: "hidden",
   };
 
   const overlayStyle = () => {
@@ -85,7 +86,7 @@ const Collapsibles = () => {
             style={collapsibleStyle}
             onClick={() => {
               handleClick(index);
-              setStyleOverflow("");
+              setStyleOverflow("hidden");
               overlayStyle().then();
             }}
           >

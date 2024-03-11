@@ -39,6 +39,8 @@ const ProgressBar = () => {
     fontWeight: 900,
   };
 
+  console.log({ progress });
+
   return (
     <div className="container" style={containerStyle}>
       <div style={Parentdiv}>
@@ -46,8 +48,20 @@ const ProgressBar = () => {
           <span style={progresstext}>{`${progress}%`}</span>
         </div>
       </div>
-      <button onClick={() => setProgress(40)} style={{ margin: "0 auto" }}>
-        Incrementa a barra.
+      <button
+        onClick={() =>
+          setProgress((prev) => {
+            if (prev === 100) {
+              console.log("Barra atingiu 100%!");
+              return prev;
+            }
+
+            return prev + 10;
+          })
+        }
+        style={{ margin: "0 auto" }}
+      >
+        Incremente a barra.
       </button>
     </div>
   );

@@ -1,0 +1,21 @@
+.s-wrapper {
+  border: 1px solid black;
+  width: 300px;
+}
+
+.s-content {
+  max-width: 23rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.s-contents {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  display: block;
+  background-color: aqua;
+  flex: 0 0 200px; /* Dessa forma, os botões dentro da div "s-contents" terão uma largura fixa de 200px, independentemente do layout flexível do contêiner. */
+}

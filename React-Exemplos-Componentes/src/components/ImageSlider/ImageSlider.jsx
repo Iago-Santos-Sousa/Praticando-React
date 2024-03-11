@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ImageSlider.css";
 import car1 from "../../assets/car-1.jpg";
 import car2 from "../../assets/car-2.jpg";

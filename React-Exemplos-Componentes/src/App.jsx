@@ -11,6 +11,8 @@ import CountDownBar from "./components/CountDownBar/CountDownBar";
 import Accordion from "./components/Accordion/Accordion";
 import SearchBar from "./components/SearchBar/SearchBar";
 import ImageSlider from "./components/ImageSlider/ImageSlider";
+import Tabs1 from "./components/Tabs1/Tabs1";
+import SliderTranslate from "./components/SliderTranslate/SliderTranslate";
 
 function App() {
   return (
@@ -33,13 +35,16 @@ function App() {
       <br />
       <br />
       <CountDownBar />
-
       <br />
       <Accordion />
       <br />
       <SearchBar />
       <br />
       <ImageSlider />
+      <br />
+      <Tabs1 />
+      <br />
+      <SliderTranslate />
     </>
   );
 }
