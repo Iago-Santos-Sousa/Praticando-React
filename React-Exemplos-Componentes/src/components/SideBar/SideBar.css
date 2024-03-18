@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: auto;
   background-color: #3841e6;
   width: 14rem;
   padding: 4px 12px;
@@ -134,6 +134,7 @@
 }
 
 .sidebar-links .active {
+  /* Adicionar posteriormente */
   color: white;
 }
 

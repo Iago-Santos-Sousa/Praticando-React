@@ -82,9 +82,9 @@ const Accordion = () => {
   // console.log(styleOverflow);
 
   return (
-    <>
+    <div style={{ width: "100%" }}>
       {contents.map((ele, index, arr) => (
-        <div key={index} style={{ width: "500px" }}>
+        <div key={index} style={{ width: "500px", margin: "0 auto" }}>
           <button
             className={`accordion ${
               activeContents[index] ? "active-accordion" : ""
@@ -111,7 +111,7 @@ const Accordion = () => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

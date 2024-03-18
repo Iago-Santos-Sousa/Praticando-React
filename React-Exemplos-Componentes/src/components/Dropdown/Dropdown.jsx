@@ -22,8 +22,9 @@ const Dropdown = () => {
 
   const dropDown = {
     position: "relative",
-    display: "inline-block",
-    minWidth: 140,
+    display: "block",
+    maxWidth: 140,
+    margin: "0 auto",
   };
 
   const dropBtn = {
@@ -70,41 +71,43 @@ const Dropdown = () => {
   /* Neste exemplo, o novo manipulador de eventos handleLinkClick é adicionado aos elementos <a>. Ele evita a propagação do evento usando e.stopPropagation() e, em seguida, fecha o dropdown-content e define activeMenu como false. */
 
   return (
-    <div
-      className="dropdown"
-      style={dropDown}
-      onClick={() => setActiveMenu((prev) => !prev)}
-      ref={dropDownRef}
-    >
-      <button className="dropdown-btn" style={dropBtn}>
-        <span>Dropdown</span>
-        <span style={svgStyle}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="black"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="arcs"
-          >
-            <path d="M9 18l6-6-6-6"></path>
-          </svg>
-        </span>
-      </button>
-      <div className="dropdown-content" style={dropDownContent}>
-        {[1, 2, 3].map((ele, index) => (
-          <a
-            key={index}
-            style={aLink}
-            onClick={(e) => {
-              e.stopPropagation();
-              setActiveMenu(false);
-            }}
-          >{`Link ${ele}`}</a>
-        ))}
+    <div style={{ width: "100%" }}>
+      <div
+        className="dropdown"
+        style={dropDown}
+        onClick={() => setActiveMenu((prev) => !prev)}
+        ref={dropDownRef}
+      >
+        <button className="dropdown-btn" style={dropBtn}>
+          <span>Dropdown</span>
+          <span style={svgStyle}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="black"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="arcs"
+            >
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </span>
+        </button>
+        <div className="dropdown-content" style={dropDownContent}>
+          {[1, 2, 3].map((ele, index) => (
+            <a
+              key={index}
+              style={aLink}
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveMenu(false);
+              }}
+            >{`Link ${ele}`}</a>
+          ))}
+        </div>
       </div>
     </div>
   );
