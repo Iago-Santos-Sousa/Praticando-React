@@ -13,6 +13,8 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import ImageSlider from "./components/ImageSlider/ImageSlider";
 import Tabs1 from "./components/Tabs1/Tabs1";
 import SliderTranslate from "./components/SliderTranslate/SliderTranslate";
+import VerticalTabs from "./components/VerticalTabs/VerticalTabs";
+import SideBar from "./components/SideBar/SideBar";
 
 function App() {
   return (
@@ -45,6 +47,10 @@ function App() {
       <Tabs1 />
       <br />
       <SliderTranslate />
+      <br />
+      <VerticalTabs />
+      <br />
+      <SideBar />
     </>
   );
 }

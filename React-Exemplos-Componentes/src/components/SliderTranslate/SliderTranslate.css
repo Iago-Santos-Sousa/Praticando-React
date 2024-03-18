@@ -1,6 +1,7 @@
 .s-wrapper {
   border: 1px solid black;
-  width: 300px;
+  margin: 0 auto;
+  max-width: min(80%, 300px);
 }
 
 .s-content {
